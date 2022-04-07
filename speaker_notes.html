@@ -1,0 +1,127 @@
+
+<style>
+body {
+  font-size: 20px;
+  font-family: roboto;
+  padding: 40px;
+  margin-bottom: 6000px;
+}
+p {
+  margin: 30px 20px;
+  width: 500px;
+}
+code {
+  color: #999;
+  font-family: monospace;
+  display: block;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px;
+}
+code:hover {
+  background-color: #ccccff;
+  color: #666;
+  cursor: pointer;
+}
+code.animate {
+  background-color: white;
+  border-color: #faa;
+  color: #ccc;
+  transition: background-color 300ms linear;
+}
+</style>
+
+
+<h3>Slide 1</h3>
+
+<p>
+Hi. My name is ..., and I am ....
+
+<p>
+These are your notes, write them the way you want.
+
+<p>
+Some people write only bullet
+points, other people write complete sentences, and others write full sentences
+with bold font on the <b>key elements</b> of each sentence.
+<p>
+That will help avoid perceptible eye movement and reduce the risk of
+getting lost while speaking.
+<p>
+If you go with full sentences, make sure you use small paragraphs, and don't
+make blocks bigger than three or four lines. Use html p element to separate
+paragraphs.
+<p>
+Note that this template sets the text blocks to 500px of width, which may also
+avoid perceptible eye movement.
+
+
+<h3>Slide 2</h3>
+<p>
+Have clear indications on where you are moving from one slide to the other, so
+that you can ask whoever is commanding the slides "next slide, please" (or you
+do it yourself)
+
+
+<h3>Demo</h3>
+
+Prefix code with talking notes. It is hard to type and think simultaneously.
+<code>
+ls ~/here_you_have_your_command && echo "click on this block and it will copy to
+your clipboard automatically"
+</code>
+
+You can have as many code blocks as possible, just keep them one liners if
+possible.
+<code>
+echo "notice what happens when you click on a block and moves the mouse out of
+it"
+</code>
+
+
+<h4>Use subtitles for demo boundaries</h4>
+
+More stuff here
+<code>
+echo "just kidding, this is useless"
+</code>
+
+<p>
+<hr>
+
+<p>
+<i>Can we switch back to the slides, please?</i>
+
+
+<h3>Slide 3</h3>
+
+<p>
+Nothing new here, but notice the empty space below.
+
+<p>
+It is set by CSS, and it allows you to scroll til the end, so that
+your eyes don't need to look down.
+
+<p>
+Remember to keep eye contact with the camera as much as possible.
+
+
+
+
+<script>
+  document.querySelectorAll('code').forEach( block => {
+
+      block.addEventListener('mouseenter' , (e)=> {
+        e.target.classList.remove("animate");
+      });
+      block.addEventListener('click' , (e)=> {
+        navigator.clipboard.writeText(e.target.innerText).then(
+           function() {
+               e.target.classList.add("animate");
+           },
+        )
+      });
+    }
+   );
+</script>
+  
